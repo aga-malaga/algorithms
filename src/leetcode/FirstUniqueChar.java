@@ -1,21 +1,30 @@
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class FirstUniqueChar {
     public static void main(String[] args) {
         String s = "leetcode";
         String s2 = "loveleetcode";
         String s3 = "aabb";
+        System.out.println(firstUniqChar(s));
+        System.out.println(firstUniqChar(s2));
+        System.out.println(firstUniqChar(s3));
     }
 
     public static int firstUniqChar(String s) {
-        int index = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(index) != s.charAt(i)) {
-                continue;
-            }
-            return -1;
+        Map<Character, Integer> map = new HashMap<>();
 
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
         }
-        return index;
+        System.out.println(map);
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1){
+                return i;
+            }
+        }
+        return -1;
     }
 }
