@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.math.BigInteger;
-import java.util.Arrays;
-
 class Atoi {
     public static void main(String[] args) {
         String s = "42";
@@ -17,15 +14,17 @@ class Atoi {
         final String regex = "[^0-9+-]\\s*";
         final String replaceAll = s.replaceAll(regex, "");
         int result = 0;
-
         try {
             result = Integer.parseInt(replaceAll);
         } catch (NumberFormatException e){
-
+            if (result > Integer.MAX_VALUE){
+                return Integer.MAX_VALUE;
+            } else if (result < Integer.MIN_VALUE){
+                return Integer.MIN_VALUE;
+            }
         }
 
-
-        return 0;
+        return result;
     }
 
 
