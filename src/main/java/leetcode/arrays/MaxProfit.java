@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.arrays;
 
 class MaxProfit {
     public static void main(String[] args) {

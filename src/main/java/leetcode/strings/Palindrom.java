@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.strings;
 
 class Palindrom {
     public static void main(String[] args) {

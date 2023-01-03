@@ -1,9 +1,8 @@
-package leetcode;
+package leetcode.arrays;
 
+import leetcode.arrays.PlusOne;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PlusOneTest {
 

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.strings;
 
 class Atoi {
     public static void main(String[] args) {

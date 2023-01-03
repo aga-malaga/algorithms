@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.strings;
 
 class Strstr {
     public static void main(String[] args) {
