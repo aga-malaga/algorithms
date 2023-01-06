@@ -1,45 +1,25 @@
 package algorithmicThinking;
 
-import java.util.Scanner;
+class FoodQueue {
 
-public class FoodQueue {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        //n= queues number
-        int n = scanner.nextInt();
-        int[] array = new int[n];
-        //m= new people
-        int m = scanner.nextInt();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = scanner.nextInt();
+    public static int[] solve(int[] queues, int n, int m) {
+        int[] result = new int[m];
+
+        for (int i = 0; i < m; i++) {
+            int shortest = shortestLine(queues);
+            result[i] = queues[shortest];
+            queues[shortest]++;
         }
-        findQueue(array, m);
-
+        return result;
     }
 
-    public static void findQueue(int[] array, int newPeople) {
-        if (array.length > 100 || newPeople > 100) {
-            System.out.println("Numbers must be smaller than 100");
-            return;
+    public static int shortestLine(int[] queues) {
+        int result = 0;
+        for (int i = 1; i < queues.length; i++) {
+            if (queues[i] < queues[result]) {
+                result = i;
+            }
         }
-
-        for (int i = 0; i < newPeople; i++) {
-            int shortest = findShortest(array);
-            System.out.println(String.format("%d", array[shortest]));
-            array[shortest]++;
-
-        }
-
+        return result;
     }
-
-    private static int findShortest(int[] array) {
-        int i;
-        int shortest = 0;
-        for (i = 1; i < array.length; i++) {
-            if (array[i] < array[shortest]) ;
-            shortest = i;
-        }
-        return shortest;
-    }
-
 }
